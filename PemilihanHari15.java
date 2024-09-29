@@ -6,29 +6,20 @@ public class PemilihanHari15 {
 
     public static void main(String[] args) {
         Scanner Hari = new Scanner(System.in);
-        String dayName, dayType;
+        Byte dayNumber;
+        String dayType;
 
-        System.out.print("Input day name: ");
-        dayName = Hari.nextLine();
+        System.out.print("Input day number:(1-7): ");
+        dayNumber = Hari.nextByte();
 
-        switch (dayName.toLowerCase()) {
-            case "monday":
-            case "tuesday":
-            case "wednesday":
-            case "thursday":
-            case "friday":
+        if (dayNumber >= 1 && dayNumber <= 5) {
                 dayType = "weekday";
-                break;
-            case "saturday":
-            case "sunday":
-                dayType = "weekend";
-                break;
-            default:
-                dayType = "invalid day name";
-                
+        } else if (dayNumber == 6 || dayNumber == 7) {
+            dayType = "weekend";
+        } else{
+            dayType = "invalid day name";
         }
-        
-            System.out.println(dayName + " is a " + dayType);
+            System.out.println(dayNumber + " is a " + dayType);
     }
 }
 
